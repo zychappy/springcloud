@@ -20,7 +20,7 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
     private String url = "http://cloud-payment-service";
-    private String zkUrl = "http://cloud-provider-payment";
+    private String zkUrl = "http://cloud-payment-service";
     @GetMapping("/payment/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id")Long id){
         return restTemplate.getForObject(url+"/payment/get/"+id, CommonResult.class);

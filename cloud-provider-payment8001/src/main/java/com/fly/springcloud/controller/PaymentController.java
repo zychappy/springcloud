@@ -24,7 +24,7 @@ public class PaymentController {
 
     @PostMapping("/payment/create")
     public CommonResult createPayment(@RequestBody Payment payment){
-        log.info("create payment,{}",payment);
+        //log.info("create payment,{}",payment);
         int r = paymentSerivce.add(payment);
         if (r > 0){
             return new CommonResult(200,"success");
@@ -42,5 +42,9 @@ public class PaymentController {
         }else {
             return new CommonResult(444,"failed");
         }
+    }
+    @GetMapping("/payment/zk")
+    public CommonResult getZkInfo(){
+        return new CommonResult(200,"success","8001");
     }
 }
