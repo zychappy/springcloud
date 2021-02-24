@@ -43,4 +43,9 @@ public class PaymentController {
             return new CommonResult(444,"failed");
         }
     }
+
+    @GetMapping("/payment/zk")
+    public CommonResult getZkInfo(){
+        return new CommonResult(200,"success","8002");
+    }
 }
