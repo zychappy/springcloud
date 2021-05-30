@@ -1,5 +1,6 @@
 package com.fly.springcloud.controller;
 
+import com.fly.springcloud.aspect.OperationLog;
 import com.fly.springcloud.entity.CommonResult;
 import com.fly.springcloud.entity.Payment;
 import com.fly.springcloud.service.PaymentSerivce;
@@ -34,6 +35,7 @@ public class PaymentController {
 
     }
 
+    @OperationLog(statusCode = "1",description = "getid")
     @GetMapping("/payment/get/{id}")
     public CommonResult getPaymenById(@PathVariable("id") Long id){
         Payment payment = paymentSerivce.getPaymentById(id);
